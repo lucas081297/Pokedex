@@ -1,7 +1,7 @@
 <app-poke-search (emmitSearch)="getSearch($event)"></app-poke-search>
 <div class="listagem">
 <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
-<a [href]="enviroments.apiUrl +'details/' + pokemon.status?.id" class="pokemon">
+<a [href]="'details/' + pokemon.status?.id" class="pokemon">
   <section class="pokemon_status" *ngIf="pokemon.status">
     <h2>
       {{ pokemon.name }}
