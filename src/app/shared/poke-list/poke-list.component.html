@@ -1,0 +1,23 @@
+<app-poke-search (emmitSearch)="getSearch($event)"></app-poke-search>
+<div class="listagem">
+<ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
+<a [href]="enviroments.apiUrl +'details/' + pokemon.status?.id" class="pokemon">
+  <section class="pokemon_status" *ngIf="pokemon.status">
+    <h2>
+      {{ pokemon.name }}
+    </h2>
+    <ul>
+      <li [ngClass]="value.type.name" *ngFor="let value of pokemon.status.types">{{ value.type.name}}</li>
+    </ul>
+  </section>
+  <section class="pokemon_image" >
+  <img  [src]="pokemon.status?.sprites.other.dream_world.front_default" [alt]="pokemon.name">
+</section>
+</a>
+</ng-template>
+</div>
+
+<img *ngIf="apiError" [src]='enviroments.assetsFolder + "Error.png"' alt="Erro no carregamento do pokemon" width="100%">
+
+
+

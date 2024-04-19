@@ -1,0 +1,170 @@
+main{
+  margin-top: 2.5rem;
+}
+
+.pokemon_names{
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 75px;
+  padding: 0 1.875rem;
+  animation: fadefw 1s ease 0s 1 normal forwards;
+}
+
+.pokemon_names h1{
+    color: white;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.pokemon_names h2{
+  position: absolute;
+  font-weight: 100;
+  top: -100%;
+  font-size: 3.75rem;
+  color: #ffffff1a;
+}
+
+.pokemon_status{
+  position: relative;
+}
+
+.pokemon_status img{
+  position: absolute;
+  top: -4.625rem;
+  left: 1.875rem;
+  max-width: 8.125rem;
+  z-index: 10;
+}
+
+#pokeball{
+  left: 1.1rem;
+  opacity: 0;
+  animation: leftroll 500ms ease  1 normal forwards;
+}
+
+#pokeimage {
+  opacity: 0;
+  animation: scalebottom 800ms ease 0s 1 forwards;
+}
+
+.pokemon_status_statistics{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  min-height: 43.9vh;
+  margin-top: .625rem;
+  padding: 1.875rem 2.1875rem 1.875rem;
+  border-radius: 3.125rem 3.125rem 0 0;
+}
+
+
+.pokemon_status_statistics h3{
+  font-weight: 700;
+  font-style: italic;
+  font-size: 2rem;
+  text-decoration: underline;
+  color: rgb(195, 95, 95);
+  margin-top: 2.2rem;
+  padding-left: 10rem;
+}
+
+ol,ul{
+  list-style: none;
+}
+
+li{
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.125rem;
+  line-height: 130%;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1.25rem 0;
+  border-radius: .625rem;
+  text-decoration: none;
+  background-color: #FF5473;
+  color: white;
+}
+
+@media (max-width: 420px) {
+
+  .pokemon__names {
+    h1 {
+      font-size: 320px;
+    }
+
+    h2 {
+      top: 560px;
+      font-size: 320px;
+    }
+  }
+
+  .pokemon__status {
+    position: relative;
+  }
+
+    img {
+      position: absolute;
+      top: -1280;
+      left: 0;
+      max-width: 1600px;
+    }
+
+    .statistics {
+      min-height: 57vh;
+      padding-top: rem-calc(50);
+    }
+  }
+
+  @keyframes scalebottom {
+    0% {
+      transform: scale(0);
+      background-color: white;
+      border-radius: 100%;
+      transform-origin: 50% 100%;
+    }
+
+    50%{
+      background-color: white;
+      opacity: 0;
+      border-radius: 100%;
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      transform-origin: 50% 100%;
+    }
+  }
+
+  @keyframes fadefw {
+    0% {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes leftroll {
+    0% {
+      opacity: 0;
+      transform: translateX(-250px) rotate(-200deg);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0) rotate(0deg);
+    }
+  }
