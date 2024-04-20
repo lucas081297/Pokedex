@@ -14,11 +14,15 @@
 
     <article class="pokemon_status_statistics">
       <section>
+        <div class=""><a href="">Comparar Pokemon</a></div>
         <h3>Estatísticas</h3>
         <ol>
           <li *ngFor="let value of pokemon[0].stats">{{ value.stat.name }}
 
           <strong> {{value.base_stat }}</strong>
+        </li>
+        <li class="total">Total
+          <strong>{{totalStats()}}</strong>
         </li>
         </ol>
       </section>

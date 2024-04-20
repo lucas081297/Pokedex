@@ -14,14 +14,17 @@ export class DetailsComponent implements OnInit, AfterViewInit {
   public pokemon :any;
   public isLoading: boolean = false;
   public apiError: boolean = false;
-
+  public totalStats(): number{
+    const sum = this.pokemon[0].stats.reduce((acc:number,stats:any)=> {
+      return acc + stats.base_stat
+    },0)
+    return sum
+  }
   private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon'
   private urlName: string = 'https://pokeapi.co/api/v2/pokemon-species'
   public enviroments:any = environment
   private playAudio(path:string) {
     var audio = new Audio(path);
-    //audio.type = 'audio/wav';
-
     try {
       setTimeout(() => {
         audio.volume = 0.1;
@@ -46,6 +49,7 @@ export class DetailsComponent implements OnInit, AfterViewInit {
         this.pokemon = res
         this.isLoading = true
         this.playAudio(res[0].cries.latest)
+        this.totalStats()
       },
       error: () => this.apiError = true
     })

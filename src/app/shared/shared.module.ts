@@ -4,6 +4,8 @@ import { PokeHeaderComponent } from './poke-header/poke-header.component';
 import { PokeSearchComponent } from './poke-search/poke-search.component';
 import { PokeListComponent } from './poke-list/poke-list.component';
 import { RouterModule } from '@angular/router';
+import { PokeListCompareComponent } from './poke-list-compare/poke-list-compare.component';
+import { DetailsCompareComponent } from './details-compare/details-compare.component';
 
 
 
@@ -11,7 +13,9 @@ import { RouterModule } from '@angular/router';
   declarations: [
     PokeHeaderComponent,
     PokeSearchComponent,
-    PokeListComponent
+    PokeListComponent,
+    PokeListCompareComponent,
+    DetailsCompareComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +23,9 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     PokeHeaderComponent,
-    PokeListComponent
+    PokeListComponent,
+    PokeListCompareComponent,
+    DetailsCompareComponent
   ]
 })
 export class SharedModule { }

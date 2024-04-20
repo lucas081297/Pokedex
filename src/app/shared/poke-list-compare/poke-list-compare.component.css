@@ -1,0 +1,129 @@
+div{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.125rem;
+  flex-flow: row wrap;
+
+}
+
+.pokemon {
+  position: relative;
+  display: flex;
+  width: 44%;
+  background-color: white;
+  border-radius: 0.625rem;
+  padding: 1.25rem;
+  margin-bottom: 0.625rem;
+  height: 5.6rem;
+  cursor: pointer;
+}
+
+.pokemon_status h2{
+  font-size: 1.375rem;
+  font-style: italic;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.pokemon_status ul{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 0px;
+}
+.pokemon_status li{
+  font-size: 0.625rem;
+  text-transform: capitalize;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  border-radius: 5%;
+  width: 3.75rem;
+}
+.pokemon_image{
+  position: absolute;
+  height: 5.625rem;
+  width: 6.875rem;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  background: url(../../../assets/img/Bolinhas.svg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+img{
+  width: 3.75rem;
+
+}
+
+a{
+  text-decoration: none;
+  color: rgb(48, 4, 4);
+}
+
+a:visited{
+  text-decoration: none;
+  color: none;
+}
+
+li.grass{
+  background-color: greenyellow;
+}
+li.poison{
+  background-color: blueviolet;
+  color: white;
+}
+li.fire{
+  background-color: orangered;
+  color: white;
+}
+li.water{
+  background-color: rgb(21, 100, 165);
+  color: white;
+}
+li.bug{
+  background-color: rgb(73, 128, 0);
+  color: white;
+}
+li.normal{
+  background-color: gray;
+}
+li.flying{
+  background-color: #6379D8;
+  color: white;
+}
+li.electric{
+  background-color: #F8BA14;
+}
+li.ground{
+  background-color: #CFAF53;
+}
+li.fairy{
+  background-color: #F4B1F7
+}
+li.fighting{
+  background-color: #7D3217;
+  color: white;
+}
+li.psychic{
+  background-color: #E8467D;
+}
+li.steel{
+  background-color: #B5B4C3;
+}
+li.ice{
+  background-color: #A6E8FC;
+}
+li.ghost{
+  background-color: #6365B2;
+  color: white;
+}
+li.rock{
+  background-color: #B7A157;
+}
+li.dragon{
+  background-color: #7560DD;
+}
+
+

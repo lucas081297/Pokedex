@@ -65,10 +65,40 @@ main{
   font-weight: 700;
   font-style: italic;
   font-size: 2rem;
-  text-decoration: underline;
   color: rgb(195, 95, 95);
-  margin-top: 2.2rem;
+  margin-top: .2rem;
   padding-left: 10rem;
+  margin-bottom: 0;
+}
+
+.pokemon_status_statistics h3 span{
+  position: absolute;
+  right: 5%;
+  font-size: 1rem;
+
+}
+
+.pokemon_status_statistics div{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.pokemon_status_statistics div a{
+  text-decoration: none;
+  color: red;
+}
+
+.pokemon_status_statistics .total{
+  padding-top: .5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.pokemon_status_statistics .total strong{
+  color: red;
+  text-decoration: underline;
+  font-size: larger;
 }
 
 ol,ul{

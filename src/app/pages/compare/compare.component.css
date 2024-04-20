@@ -1,0 +1,62 @@
+main{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main select{
+  width: 100%;
+}
+
+main img{
+  width: 10rem;
+  cursor: pointer;
+}
+
+.hidden{
+  display: none;
+  position: none;
+  width: 0;
+  height: 0;
+}
+
+.battle_animation{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  animation: battle_animation 1000ms ease 0s 2 normal none;
+}
+
+.poke_battle{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.invert{
+  -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+@keyframes battle_animation {
+	0%,
+	50%,
+	100% {
+		opacity: 1;
+    background-color: white;
+	}
+
+	25%,
+	75% {
+    background-color: none;
+		opacity: 0;
+	}
+}
