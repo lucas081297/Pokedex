@@ -1,5 +1,5 @@
 <main>
-
+  <section [ngClass]="winner == id ? 'winner' : 'hidden' "></section>
   <ng-template [ngIf]="isLoading">
   <section class="pokemon_names">
   <h1>{{ pokemon[0].name }}</h1>
@@ -10,10 +10,10 @@
     <img id="pokeball" [src]='enviroments.assetsFolder + "pokeball.png"' width="50"/>
     <img id="pokeimage" [src]="pokemon[0].sprites.other.dream_world.front_default"
     [alt]="pokemon[0].name">
+    <img id="poketrophy" [ngClass]="{'hidden': winner!= id}" src="https://i.pinimg.com/originals/aa/f1/b0/aaf1b0693cc95fab78f29b399b27e15e.png" alt="Pokemon Vencedor">
 
     <article class="pokemon_status_statistics">
       <section #pokestats>
-        <div class=""><a href="">Comparar Pokemon</a></div>
         <h3>Estatísticas</h3>
         <ol>
           <li class="hidden" *ngFor="let value of pokemon[0].stats">{{ value.stat.name }}
@@ -30,5 +30,5 @@
 </ng-template>
 
 <img *ngIf="apiError" [src]='enviroments.assetsFolder + "error.png"' alt="Erro no carregamento do pokemon" width="100%">
-
 </main>
+

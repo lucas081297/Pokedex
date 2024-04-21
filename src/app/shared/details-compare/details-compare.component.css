@@ -1,5 +1,6 @@
 main{
   margin-top: 2.5rem;
+  position: relative;
 }
 
 .pokemon_names{
@@ -16,6 +17,7 @@ main{
     color: white;
     font-size: 2rem;
     text-transform: capitalize;
+    z-index: 2;
 }
 
 .pokemon_names h2{
@@ -24,6 +26,7 @@ main{
   top: -100%;
   font-size: 3.75rem;
   color: #ffffff1a;
+  z-index: 2;
 }
 
 .pokemon_status{
@@ -130,6 +133,24 @@ li{
 .fadefw{
   animation: fadefw 2s ease 0s 1 normal forwards;
 }
+.winner{
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i.pinimg.com/originals/fd/d0/0e/fdd00eff2cfe977daed3584f56eafbc9.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+#poketrophy{
+    width: 6rem;
+    padding-left: 5rem;
+    left: 3rem;
+    animation: bouncetop 2s ease 0s 1 normal forwards;
+}
 
 @media (max-width: 420px) {
 
@@ -203,5 +224,48 @@ li{
     100% {
       opacity: 1;
       transform: translateX(0) rotate(0deg);
+    }
+  }
+  @keyframes bouncetop {
+    0% {
+      animation-timing-function: ease-in;
+      opacity: 0;
+      transform: translateY(-250px);
+    }
+
+    38% {
+      animation-timing-function: ease-out;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    55% {
+      animation-timing-function: ease-in;
+      transform: translateY(-65px);
+    }
+
+    72% {
+      animation-timing-function: ease-out;
+      transform: translateY(0);
+    }
+
+    81% {
+      animation-timing-function: ease-in;
+      transform: translateY(-28px);
+    }
+
+    90% {
+      animation-timing-function: ease-out;
+      transform: translateY(0);
+    }
+
+    95% {
+      animation-timing-function: ease-in;
+      transform: translateY(-8px);
+    }
+
+    100% {
+      animation-timing-function: ease-out;
+      transform: translateY(0);
     }
   }

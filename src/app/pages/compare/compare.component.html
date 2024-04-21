@@ -4,15 +4,16 @@
     <app-poke-list-compare [getAllPokemons]="setAllPokemons" (choiseEvent)="handleChoises($event)" [pokeChoise]="0"></app-poke-list-compare>
   </section>
   <section>
-    <img (click)="handleBattle()" [ngClass]="vs ? '': 'hidden' " src="https://static.vecteezy.com/system/resources/thumbnails/028/824/564/small_2x/vs-letters-versus-png.png" alt="">
+    <img (click)="handleBattle()" [ngClass]="vs ? '': 'hidden' " src="https://static.vecteezy.com/system/resources/thumbnails/028/824/564/small_2x/vs-letters-versus-png.png" alt="Comparar">
   </section>
   <section>
     <app-poke-list-compare [getAllPokemons]="setAllPokemons" (choiseEvent)="handleChoises($event)" [pokeChoise]="1"></app-poke-list-compare>
   </section>
   <img *ngIf="apiError" [src]='"../../../" + enviroments.assetsFolder + "Error.png"' alt="Erro no carregamento do pokemon" width="100%">
 </main>
-<section [ngClass]="blinkScreen ? 'battle_animation' : 'hidden' "></section>
+<div [ngClass]="blinkScreen && !winner ? 'battle_animation' : 'hidden' "></div>
 <section *ngIf="battleStart" class="poke_battle">
-  <app-details-compare #firstPokemon [id]="firstChosen" (detailsEvent)="firstChosenSum = $event" (endBattle)="finishBattle()"></app-details-compare>
-  <app-details-compare #secondPokemon [id]="secondChosen" (detailsEvent)="secondChosenSum = $event" (endBattle)="finishBattle()" ></app-details-compare>
+  <app-details-compare [winner]="winner"  [id]="firstChosen" (detailsEvent)="firstChosenSum = $event" (endBattle)="finishBattle()"></app-details-compare>
+  <app-details-compare [winner]="winner" [id]="secondChosen" (detailsEvent)="secondChosenSum = $event" (endBattle)="finishBattle()" ></app-details-compare>
 </section>
+<button (click)="refresh()" *ngIf="winner">Voltar</button>

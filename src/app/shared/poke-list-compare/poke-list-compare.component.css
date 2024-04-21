@@ -19,16 +19,23 @@ div{
 }
 
 .pokemon_status h2{
+  position: absolute;
+  top: 0;
   font-size: 1.375rem;
   font-style: italic;
   font-weight: 700;
   text-transform: capitalize;
+  z-index: 2;
 }
 .pokemon_status ul{
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding-left: 0px;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
 }
 .pokemon_status li{
   font-size: 0.625rem;
@@ -51,6 +58,7 @@ div{
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 img{
   width: 3.75rem;

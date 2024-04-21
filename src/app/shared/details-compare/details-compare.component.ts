@@ -21,7 +21,6 @@ export class DetailsCompareComponent implements OnInit, OnChanges,AfterViewInit 
         audio.play();
       }, 600);
     } catch (err) {
-      console.log('Failed to play...' + err);
     }
   }
 
@@ -38,11 +37,10 @@ export class DetailsCompareComponent implements OnInit, OnChanges,AfterViewInit 
   }
 
   @ViewChildren('pokestats') public pokestats!: any
-  @ViewChildren('firstPokemon') public firstPokemon!: any
-  @ViewChildren('SecondPokemon') public secondPokemon!: any
 
   @Input() public id!:number
   @Input() public startBattle:boolean = true
+  @Input() public winner!:number
 
   @Output() detailsEvent = new EventEmitter<number>()
   @Output() endBattle = new EventEmitter<boolean>()
@@ -72,7 +70,6 @@ export class DetailsCompareComponent implements OnInit, OnChanges,AfterViewInit 
       for(let element of listArray){
         element.classList.remove('hidden')
         element.classList.add('fadefw')
-        console.log(element)
         await new Promise((resolve) => setTimeout(resolve,2000))
       }
       this.endBattle.emit(true)
@@ -83,13 +80,20 @@ export class DetailsCompareComponent implements OnInit, OnChanges,AfterViewInit 
 
   }
 
+  sendTrophy(target:Element){
+    target.classList.remove('hidden')
+    target.classList.add('fadefw')
+  }
+
+
+
   ngOnInit(): void {
       this.getPokemon;
-      console.log(this.id)
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes)
+    console.log(changes['winner'])
+    console.log(`ID: ${this.id} ||| Vencedor:${this.winner} ||| Vencedor igual ao id: ${this.id == this.winner}`)
   }
 
   ngAfterViewInit(): void {
