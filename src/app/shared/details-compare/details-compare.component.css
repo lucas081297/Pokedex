@@ -154,16 +154,15 @@ li{
 
 @media (max-width: 420px) {
 
-  .pokemon__names {
-    h1 {
+
+    .pokemon_names h1 {
       font-size: 320px;
     }
 
-    h2 {
+    .pokemon_names h2 {
       top: 560px;
       font-size: 320px;
     }
-  }
 
   .pokemon__status {
     position: relative;

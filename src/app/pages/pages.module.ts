@@ -5,6 +5,7 @@ import { RoutingModule } from './routing.module';
 import { DetailsComponent } from './details/details.component';
 import { SharedModule } from '../shared/shared.module';
 import { CompareComponent } from './compare/compare.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
 
 
 
@@ -12,7 +13,8 @@ import { CompareComponent } from './compare/compare.component';
   declarations: [
     HomeComponent,
     DetailsComponent,
-    CompareComponent
+    CompareComponent,
+    AnalyticsComponent
   ],
   imports: [
     CommonModule,

@@ -1,7 +1,9 @@
 import { Component, OnInit} from '@angular/core';
 import { ChoiseEvent } from 'src/app/shared/poke-list-compare/interface';
 import { PokeApiService } from 'src/app/service/poke-api.service';
+import { PokeDataApiService } from 'src/app/service/poke-data-api.service';
 import { environment } from 'src/environments/environment';
+import { PokeData } from 'src/app/service/interface';
 
 @Component({
   selector: 'app-compare',
@@ -24,8 +26,10 @@ export class CompareComponent implements OnInit {
 
   private audio:HTMLAudioElement = new Audio
 
-  constructor (private PokeApiService: PokeApiService) {
-  }
+  constructor (
+    private PokeApiService: PokeApiService,
+    private PokeDataApiService: PokeDataApiService
+  ) {}
 
   public refresh(){
     window.location.reload()
@@ -55,9 +59,20 @@ export class CompareComponent implements OnInit {
     this.audio.pause()
     this.audio.src = '../../../assets/audio/pokeVictory.mp3'
     this.audio.play()
+    let winnerPokemonData!:PokeData
+    await this.PokeDataApiService.apiGetPokemon(this.winner).subscribe({
+      next: (res:PokeData) => {
+        winnerPokemonData = res
+        this.PokeDataApiService.apiEditPokemon({id: this.winner, pokemonName : winnerPokemonData.pokemonName, pokemonData: winnerPokemonData.pokemonData+1}).subscribe({
+          next: (res) => {
+            res
+          },
+          error: (err=>console.log(err))
+        })
+      }
+    })
+
   }
-
-
 
   ngOnInit(): void {
     this.PokeApiService.apiListAllPokemon.subscribe({
@@ -66,5 +81,5 @@ export class CompareComponent implements OnInit {
       },
       error: () => this.apiError = true
     })
-}
+  }
 }

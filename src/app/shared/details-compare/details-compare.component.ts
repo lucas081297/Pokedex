@@ -92,8 +92,7 @@ export class DetailsCompareComponent implements OnInit, OnChanges,AfterViewInit 
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes['winner'])
-    console.log(`ID: ${this.id} ||| Vencedor:${this.winner} ||| Vencedor igual ao id: ${this.id == this.winner}`)
+    
   }
 
   ngAfterViewInit(): void {

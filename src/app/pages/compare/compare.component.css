@@ -1,9 +1,17 @@
 main{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.maindiv{
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 45% 10% 45%;
+  grid-auto-flow: column;
+  grid-auto-columns: min-content;
   gap: 1.25rem;
   margin-left: auto;
   margin-right: auto;
+  justify-items: center;
 }
 
 button{
@@ -27,6 +35,8 @@ main img{
   position: fixed;
   width: 10rem;
   cursor: pointer;
+  top: 36%;
+  left: 42%;
 }
 
 .hidden{
@@ -74,3 +84,39 @@ main img{
 		opacity: 0;
 	}
 }
+
+@media (max-width: 420px) {
+
+  main{
+    max-width: 100vw;
+    padding-left: 1rem;
+  }
+
+  .pokemon_names h1 {
+    font-size: 320px;
+  }
+
+  .pokemon_names h2 {
+    top: 560px;
+    font-size: 320px;
+  }
+
+
+
+  .pokemon_status_statistics{
+    padding: 0.875rem 0.1875rem 1.875rem;
+    min-height: 57.9vh;
+  }
+
+  .pokemon_status_statistics h3{
+    padding-left: 2.2rem;
+    font-size: 1rem;
+
+  }
+
+  .pokemon_status img{
+    max-width: 5.125rem;
+  }
+
+}
+

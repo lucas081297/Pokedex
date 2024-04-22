@@ -24,7 +24,7 @@ export class PokeListCompareComponent implements OnInit {
   }
 
   public getSearch (value:string){
-    const filter = this.setAllPokemons.filter( (res:any)=>{
+    const filter = this.getAllPokemons.filter( (res:any)=>{
       return !res.name.indexOf(value.toLowerCase())
     })
     this.getAllPokemons = filter
