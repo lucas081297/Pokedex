@@ -31,7 +31,6 @@ export class DetailsComponent implements OnInit, AfterViewInit {
         audio.play();
       }, 600);
     } catch (err) {
-      console.log('Failed to play...' + err);
     }
   }
 

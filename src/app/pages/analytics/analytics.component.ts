@@ -26,12 +26,10 @@ export class AnalyticsComponent implements OnInit {
     for(let pokemon of this.setTopPokemons){
       this.PokeApiService.apiGetPokemons(this.url+pokemon.id).subscribe({
         next: (res) => {
-          //console.log(res)
           Object.assign(pokemon,res)
         }
       })
     }
-    console.log(this.setTopPokemons)
     }
 
    ngOnInit(): void {
@@ -45,7 +43,6 @@ export class AnalyticsComponent implements OnInit {
         this.handleImages()
         this.setChampionsPokemon = this.setTopPokemons.slice(0,3)
         this.setTopPokemons = this.setTopPokemons.slice(3,8)
-        console.log(this.setChampionsPokemon)
       },
       error: () => this.apiError = true
     })

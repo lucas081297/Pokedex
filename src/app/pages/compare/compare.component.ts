@@ -67,7 +67,6 @@ export class CompareComponent implements OnInit {
           next: (res) => {
             res
           },
-          error: (err=>console.log(err))
         })
       }
     })
