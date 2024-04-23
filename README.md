@@ -1,6 +1,7 @@
 # Pokedex
 
 Esse projeto foi gerado com Angular 16.2
+<br>
 .Net 8.0 (ASP)
 
 
