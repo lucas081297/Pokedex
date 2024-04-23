@@ -3,7 +3,7 @@
 
 # Pokedex
 
-Esse projeto foi gerado com Angular 16.2
+Esse projeto foi gerado com Angular 16.2, utilizando PokeAPI (api pública) e PokedexAPI api feita para este projeto.
 <br>
 .Net 8.0 (ASP)
 
