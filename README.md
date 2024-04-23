@@ -10,8 +10,10 @@ Esse projeto foi gerado com Angular 16.2
 
 # Execução
 
-1 - Abra start.api
+1 - Abra start-api.bat
 <br>
-2 - Abra start-front
+2 - Abra npm.bat
 <br>
-3 - Abra a url Pokedex
+3 - Abra start-front.bat
+<br>
+4 - Abra a url Pokedex
