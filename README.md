@@ -7,5 +7,7 @@ Esse projeto foi gerado com Angular 16.2
 # Execução
 
 1 - Abra start.api
+<br>
 2 - Abra start-front
+<br>
 3 - Abra a url Pokedex
