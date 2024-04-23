@@ -1,3 +1,6 @@
+![png-clipart-pokemon-pokemon-removebg-preview](https://github.com/lucas081297/pokedex/assets/65791119/17fe73d5-ecf0-4fc9-86ed-dc4c9b8bb10d)
+
+
 # Pokedex
 
 Esse projeto foi gerado com Angular 16.2
